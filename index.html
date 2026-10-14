@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#246b50">
+  <meta name="description" content="とんかつキャッシュ🍀のお問い合わせ・サービス案内ページ。お金に関するお悩みについて、内容を確認のうえご案内します。">
+  <title>とんかつキャッシュ🍀｜お金の相談窓口</title>
+  <style>
+    :root{--green:#246b50;--green-dark:#174b39;--mint:#edf7f0;--gold:#c5a45b;--ink:#20332b;--muted:#64736b;--line:#dce8df;--white:#fff}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;color:var(--ink);line-height:1.8;background:#fff}
+    a{color:inherit}
+    .wrap{width:min(1100px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:800;font-size:1.15rem;color:var(--green-dark);text-decoration:none;letter-spacing:.02em}
+    .brand span{color:var(--gold)}
+    nav{display:flex;gap:22px;align-items:center;font-size:.9rem}
+    nav a{text-decoration:none;color:var(--muted)}
+    nav a:hover{color:var(--green)}
+    .hero{background:radial-gradient(circle at 85% 20%,#fff7df 0,transparent 26%),linear-gradient(135deg,#f4faf5,#fff 70%);padding:88px 0 80px;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:50px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;background:#e4f2e8;color:var(--green-dark);padding:6px 13px;border-radius:99px;font-size:.82rem;font-weight:700}
+    h1{font-size:clamp(2.2rem,5vw,4rem);line-height:1.28;letter-spacing:-.04em;margin:20px 0}
+    h1 em{font-style:normal;color:var(--green)}
+    .lead{font-size:1.08rem;color:var(--muted);max-width:590px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;border-radius:12px;padding:13px 22px;font-weight:750;text-decoration:none;border:1px solid transparent;transition:.2s}
+    .btn-primary{background:var(--green);color:white;box-shadow:0 8px 22px #246b5026}
+    .btn-primary:hover{background:var(--green-dark);transform:translateY(-1px)}
+    .btn-secondary{border-color:var(--line);background:white;color:var(--green-dark)}
+    .hero-art{min-height:340px;display:grid;place-items:center;position:relative}
+    .circle{width:min(330px,80vw);aspect-ratio:1;border-radius:50%;background:linear-gradient(145deg,#e2f1e6,#fff);border:1px solid #d6e8d9;display:grid;place-items:center;box-shadow:0 25px 65px #1b563515;position:relative}
+    .leaf{font-size:7rem;filter:drop-shadow(0 12px 12px #246b5020)}
+    .bubble{position:absolute;background:white;border:1px solid var(--line);border-radius:14px;padding:12px 16px;box-shadow:0 10px 25px #183d2810;font-size:.88rem;font-weight:700}
+    .bubble.one{top:35px;left:0}.bubble.two{right:-4px;bottom:40px}
+    section{padding:76px 0}
+    .section-head{text-align:center;max-width:700px;margin:0 auto 38px}
+    .kicker{font-size:.8rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
+    h2{font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.35;margin:8px 0 14px;letter-spacing:-.025em}
+    .section-head p{color:var(--muted);margin:0}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{border:1px solid var(--line);border-radius:18px;padding:25px;background:white}
+    .icon{width:48px;height:48px;border-radius:14px;background:var(--mint);display:grid;place-items:center;font-size:1.45rem;margin-bottom:14px}
+    .card h3{margin:0 0 8px;font-size:1.08rem}
+    .card p{margin:0;color:var(--muted);font-size:.94rem}
+    .tint{background:#f6faf7}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:step}
+    .step{padding:25px;border-radius:16px;background:white;border:1px solid var(--line)}
+    .step:before{counter-increment:step;content:"0" counter(step);display:block;color:var(--gold);font-weight:850;font-size:1.3rem;margin-bottom:12px}
+    .step h3{margin:0 0 7px}.step p{margin:0;color:var(--muted);font-size:.94rem}
+    .notice{border-left:4px solid var(--gold);background:#fffaf0;padding:18px 20px;border-radius:0 12px 12px 0;color:#655638;font-size:.9rem;margin-top:28px}
+    .faq{max-width:800px;margin:auto}
+    details{border-bottom:1px solid var(--line);padding:18px 0}
+    summary{cursor:pointer;font-weight:750;list-style:none;display:flex;justify-content:space-between;gap:15px}
+    summary:after{content:"＋";color:var(--green);font-size:1.2rem}
+    details[open] summary:after{content:"−"}
+    details p{color:var(--muted);margin:12px 0 0}
+    .contact-box{background:linear-gradient(135deg,var(--green-dark),var(--green));border-radius:24px;padding:44px;color:white;display:grid;grid-template-columns:1fr auto;align-items:center;gap:25px}
+    .contact-box h2{margin-top:0}.contact-box p{margin-bottom:0;color:#e3f0e7}
+    .contact-box .btn{background:white;color:var(--green-dark);white-space:nowrap}
+    footer{background:#f7faf8;border-top:1px solid var(--line);padding:35px 0;color:var(--muted);font-size:.86rem}
+    .footer-row{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
+    .footer-links{display:flex;gap:16px;flex-wrap:wrap}
+    .footer-links a{color:var(--muted)}
+    .small{font-size:.8rem;color:var(--muted)}
+    .placeholder{background:#fff7df;border:1px dashed #c5a45b;border-radius:10px;padding:12px 14px;font-size:.85rem;color:#655638;margin-top:20px}
+    @media(max-width:760px){.nav{padding:12px 0;align-items:flex-start;flex-direction:column;gap:8px}nav{gap:14px;flex-wrap:wrap;font-size:.82rem}.hero{padding:55px 0}.hero-grid{grid-template-columns:1fr;gap:12px}.hero-art{min-height:260px}.circle{width:240px}.leaf{font-size:5.5rem}.bubble.one{left:4%;top:20px}.bubble.two{right:2%;bottom:20px}.cards,.steps{grid-template-columns:1fr}.contact-box{grid-template-columns:1fr;padding:30px}.contact-box .btn{justify-self:start}section{padding:58px 0}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">とんかつキャッシュ<span>🍀</span></a>
+    <nav aria-label="メインメニュー">
+      <a href="#service">サービス案内</a><a href="#flow">ご利用の流れ</a><a href="#faq">よくある質問</a><a href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">🍀 お金に関する相談窓口</div>
+        <h1>お金の悩みを、<br><em>ひとりで抱えない。</em></h1>
+        <p class="lead">状況やお悩みを丁寧にうかがい、利用できる選択肢や必要な情報を分かりやすくご案内します。まずは内容を整理するところから始めましょう。</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#contact">相談・お問い合わせ <span>→</span></a>
+          <a class="btn btn-secondary" href="#service">サービスを見る</a>
+        </div>
+        <div class="placeholder">公開前に、運営者情報・問い合わせ先・サービスの実態を確認して差し替えてください。</div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="circle"><div class="leaf">🍀</div></div>
+        <div class="bubble one">丁寧にご案内</div>
+        <div class="bubble two">まずは状況の整理から</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="service">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">OUR SUPPORT</div>
+        <h2>ご相談内容に合わせてご案内</h2>
+        <p>ご相談内容を確認し、対応可能な情報や選択肢をご案内します。契約や費用が発生する場合は、事前に内容を確認できるようにします。</p>
+      </div>
+      <div class="cards">
+        <article class="card"><div class="icon">💬</div><h3>お金に関する相談</h3><p>現在の状況やお困りごとを整理し、確認すべき点や利用できる相談先などの情報をご案内します。</p></article>
+        <article class="card"><div class="icon">📘</div><h3>情報提供</h3><p>制度やサービスを検討する際に、条件・費用・注意点を確認するための情報を分かりやすくお伝えします。</p></article>
+        <article class="card"><div class="icon">🔎</div><h3>選択肢の確認</h3><p>ご相談内容に応じて、適法に利用できる選択肢や公的な相談窓口などを確認するお手伝いをします。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="flow" class="tint">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">HOW IT WORKS</div>
+        <h2>ご利用の流れ</h2>
+        <p>お問い合わせの前に、サービス内容や利用条件をご確認ください。</p>
+      </div>
+      <div class="steps">
+        <article class="step"><h3>お問い合わせ</h3><p>指定の連絡先から、お困りごとや確認したい内容をお知らせください。個人情報は必要最小限にしてください。</p></article>
+        <article class="step"><h3>内容の確認</h3><p>ご相談内容を確認し、対応できる範囲、条件、費用の有無などをご説明します。</p></article>
+        <article class="step"><h3>案内・検討</h3><p>説明内容を確認したうえで、ご自身で利用するかどうかをご判断ください。無理な契約を求めることはありません。</p></article>
+      </div>
+      <div class="notice"><strong>ご注意：</strong>融資の実行、審査通過、資金調達などを保証するものではありません。契約前に相手方・登録状況・手数料・返済条件を必ず確認してください。融資の媒介等を実施する場合は、適用される法令や登録要件を事前に確認してください。</div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">FAQ</div><h2>よくある質問</h2><p>ご利用前にご確認ください。</p></div>
+      <div class="faq">
+        <details><summary>相談したら必ずサービスを利用する必要がありますか？</summary><p>いいえ。案内内容や条件を確認し、ご自身で利用するかどうかをご判断ください。</p></details>
+        <details><summary>必ず融資を受けられますか？</summary><p>融資や審査結果を保証するものではありません。融資に関する案内を行う場合は、提供者の登録状況や条件を確認してください。</p></details>
+        <details><summary>事前に費用はかかりますか？</summary><p>費用が発生するサービスを提供する場合は、金額・支払先・支払時期・返金条件を契約前に明示してください。説明のない保証金や認証料の送金は慎重に判断してください。</p></details>
+        <details><summary>個人情報はどのように扱われますか？</summary><p>取得する情報、利用目的、保管方法、第三者提供の有無などを、実際の運用に即したプライバシーポリシーで明示する必要があります。</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="tint">
+    <div class="wrap">
+      <div class="contact-box">
+        <div><div class="kicker" style="color:#f0d99e">CONTACT</div><h2>まずはお問い合わせください</h2><p>問い合わせ先を設定後、こちらのボタンから連絡できるようになります。</p></div>
+        <a class="btn" href="mailto:CONTACT_EMAIL">メールで問い合わせる →</a>
+      </div>
+      <p class="small" style="margin-top:15px">※ 公開前に CONTACT_EMAIL を実際の問い合わせ用メールアドレスに変更してください。LINEを使う場合は、公式アカウントのURLに差し替えてください。</p>
+    </div>
+  </section>
+
+  <section id="operator">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">OPERATOR</div><h2>運営者情報</h2><p>信頼性を確保するため、公開前に以下の項目を実際の情報で埋めてください。</p></div>
+      <div class="cards">
+        <article class="card"><h3>運営者名</h3><p>［氏名または屋号を記入］</p></article>
+        <article class="card"><h3>所在地・連絡先</h3><p>［必要な範囲の事業者情報・連絡先を記入］</p></article>
+        <article class="card"><h3>サービス内容・登録情報</h3><p>［実際のサービス内容と、必要な登録・許認可情報を記入］</p></article>
+      </div>
+      <div class="notice">このページはデザインのたたき台です。運営者情報・プライバシーポリシー・利用規約・法令上必要な表示は、実際の業務に合わせて整備してから公開してください。</div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap footer-row">
+    <div><strong>とんかつキャッシュ🍀</strong><br>お金に関する相談・情報提供</div>
+    <div class="footer-links"><a href="#operator">運営者情報</a><a href="#faq">よくある質問</a><a href="#contact">お問い合わせ</a></div>
+    <div>© <span id="year"></span> Tonkatsu Cash</div>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
